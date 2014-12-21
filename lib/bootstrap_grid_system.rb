@@ -101,7 +101,8 @@ module BootstrapGridSystem
   #      </div>
   #
   def bootstrap_row_with_col(options = {})
-    bootstrap_row(options) { bootstrap_col(options.slice(:col, :offset_col, :grid_system)) { yield }}
+    col_tag = bootstrap_col(options.slice(:col, :offset_col, :grid_system)) { yield }
+    bootstrap_row(options.except(:col, :offset_col, :grid_system)) { col_tag }
   end
   
   # Creates a HTML class with Bootstrap col.

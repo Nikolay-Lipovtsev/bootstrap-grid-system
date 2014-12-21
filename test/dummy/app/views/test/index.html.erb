@@ -1,4 +1,15 @@
 <h1>Test#index</h1>
 <p>Find me in app/views/test/index.html.erb</p>
-<%= bootstrap_row_with_col(col: 6, grid_system: :lg) { "Test" } %>
-<%= bootstrap_col { "Test" } %>
+<p>Bootstrap row</p>
+<%= bootstrap_row { "Example" } %>
+<%= bootstrap_row(id: "foo", class: "bar") { "Example" } %>
+<p>Bootstrap col</p>
+<%= bootstrap_col { "Example" } %>
+<%= bootstrap_col(col: 2, offset_col: 4) { "Example" } %>
+<%= bootstrap_col(grid_system: :lg) { "Example" } %>
+<%= bootstrap_col(id: "foo", class: "bar") { "Example" } %>
+<p>Bootstrap row with col</p>
+<%= bootstrap_row_with_col { "Example" } %>
+<%= bootstrap_row_with_col(col: 2, offset_col: 4) { "Example" } %>
+<%= bootstrap_row_with_col(grid_system: :lg) { "Example" } %>
+<%= bootstrap_row_with_col(id: "foo", class: "bar") { "Example" } %>
