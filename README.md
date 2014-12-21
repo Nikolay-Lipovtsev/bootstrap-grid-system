@@ -5,10 +5,10 @@ Ruby 1.9+
 Rails 4.0+  
 Twitter Bootstrap 3.0+
 ##Installation
-Add the gem to your Gemfile
-`gem 'bootstrap-grid-system'`
-Bundle install
-`bundle install`
+Add the gem to your Gemfile  
+`gem 'bootstrap-grid-system'`  
+Bundle install  
+`bundle install`  
 ##Examples
 ###Bootstrap row
 Use `bootstrap_row` to wrap the content in a div block with "row" class
