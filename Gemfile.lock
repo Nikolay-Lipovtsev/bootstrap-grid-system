@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    bootstrap_grid_system (0.0.1)
-      rails (~> 4.1.8)
+    bootstrap-grid-system (0.2.1)
+      rails (>= 4.0)
 
 GEM
   remote: https://rubygems.org/
@@ -83,5 +83,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap_grid_system!
-  sqlite3
+  bootstrap-grid-system!
+  sqlite3 (~> 1.3)
