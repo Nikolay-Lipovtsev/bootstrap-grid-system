@@ -51,10 +51,14 @@ module BootstrapGridSystem
   # bootstrap_col(col: 6, grid_system: :lg) { "Test" }
   # # => <div class="col-lg-6">Test</div>
   #
+  # bootstrap_col(col_disabled: true) { "Test" }
+  # # => Test
+  #
   def bootstrap_col(options = {})
     grid_system = options.delete :grid_system
-    col = grid_system_class options.delete(:col) || 12, grid_system
-    offset_col = grid_system_offset_class options.delete(:offset_col), grid_system
+    col         = grid_system_class options.delete(:col) || 12, grid_system
+    offset_col  = grid_system_offset_class options.delete(:offset_col), grid_system
+    return yield if options.delete :col_disabled
     if col || offset_col
       options[:class] = [col, offset_col, options[:class]].compact.join(" ")
       content_tag(:div, options) { yield }
@@ -100,9 +104,19 @@ module BootstrapGridSystem
   #        </div>
   #      </div>
   #
+  # bootstrap_row_with_col(row_disabled: true) { "Test" }
+  # # => <div class="col-lg-6">
+  #        Test
+  #      </div>
+  #
+  # bootstrap_row_with_col(col_disabled: true) { "Test" }
+  # # => <div class="row">
+  #        Test
+  #      </div>
+  #
   def bootstrap_row_with_col(options = {})
-    col_tag = bootstrap_col(options.slice(:col, :offset_col, :grid_system)) { yield }
-    bootstrap_row(options.except(:col, :offset_col, :grid_system)) { col_tag }
+    col_tag = bootstrap_col(options.slice(:col, :offset_col, :grid_system, :col_disabled)) { yield }
+    bootstrap_row(options.except(:col, :offset_col, :grid_system, :col_disabled)) { col_tag }
   end
   
   # Creates a HTML class with Bootstrap col.

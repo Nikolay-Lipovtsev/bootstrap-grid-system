@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    bootstrap-grid-system (0.1.1)
-      rails (~> 4.1)
+    bootstrap-grid-system (0.2.1)
+      rails (>= 4.0)
 
 GEM
   remote: https://rubygems.org/
